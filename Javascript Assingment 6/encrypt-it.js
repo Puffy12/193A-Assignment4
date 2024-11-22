@@ -1,16 +1,9 @@
 (function() {
   "use strict";
 
-  /**
-   * The starting point in our program, setting up a listener
-   * for the "load" event on the window, signalling the HTML DOM has been constructed
-   * on the page. When this event occurs, the attached function (init) will be called.
-   */
   window.addEventListener("load", init);
 
-  /**
-   * This function initializes the event listeners and handles UI interaction.
-   */
+  //initializes the event listeners and handles UI interaction.
   function init() {
     console.log("Window loaded!");
 
@@ -23,11 +16,7 @@
     resetButton.addEventListener("click", handleReset);
   }
 
-  /**
-   * Event handler for the "Encrypt-It!" button.
-   * This function retrieves the input text and applies the shift cipher,
-   * then outputs the result in the result paragraph.
-   */
+  // Event handler for the "Encrypt-It!" button.
   function handleEncrypt() {
     console.log("Button clicked!");
 
@@ -42,20 +31,13 @@
     resultArea.textContent = encryptedText;
   }
 
-  /**
-   * Event handler for the "Reset" button.
-   * Clears the input textarea and the result paragraph.
-   */
+  //Event handles the "Reset" button.
   function handleReset() {
     document.getElementById("input-text").value = "";  // Clear input text
     document.getElementById("result").textContent = "";  // Clear result text
   }
 
-  /**
-   * This function applies a basic shift cipher to the given text,
-   * shifting each letter forward by one in the alphabet, and wrapping
-   * from 'z' to 'a'. Non-alphabet characters are not modified.
-   */
+  //applies a basic shift cipher to the given text,
   function shiftCipher(text) {
     text = text.toLowerCase();
     let result = "";
